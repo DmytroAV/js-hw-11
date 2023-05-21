@@ -1,0 +1,60 @@
+.arrowTop {
+  font-size: 1.2em;
+  position: fixed;
+  bottom: 55px;
+  right: 33px;
+  cursor: pointer;
+  z-index: 2;
+  width: 10px;
+  height: 10px;
+  fill: #3644af;
+
+  & svg {
+    width: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+  }
+
+  @media screen and (min-width: 1140px) {
+    bottom: 50px;
+    right: 50px;
+  }
+
+  &:hover {
+    text-decoration: none;
+    fill: #3644af;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-style: solid;
+    border-color: #3644af;
+    transition: all 0.5s;
+  }
+
+  &::before {
+    top: -1rem;
+    left: -1rem;
+    border-width: 2px 0 0 2px;
+  }
+
+  &::after {
+    bottom: -1rem;
+    right: -1rem;
+    border-width: 0px 2px 2px 0px;
+  }
+
+  &:hover::before,
+  &:hover::after {
+    width: calc(100% + 2rem);
+    height: calc(100% + 2rem);
+    border-color: #3644af;
+  }
+}

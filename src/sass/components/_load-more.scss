@@ -1,0 +1,49 @@
+.load-more {
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 500;
+  text-decoration: none;
+  color: #3644af;
+  border: 2px solid #3644af;
+  padding: 0.2em 1rem;
+  font-size: 0.8rem;
+  position: relative;
+  transition: all .5s;
+
+  &:hover {
+    text-decoration: none;
+    color: #fff;
+    background-color: #3644af;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    border-style: solid;
+    border-color: #3644af;
+    transition: all .5s
+  }
+
+  &::before {
+    top: -1.1rem;
+    left: -1.1rem;
+    border-width: 2px 0 0 2px;
+  }
+
+  &::after {
+    bottom: -1.1rem;
+    right: -1.1rem;
+    border-width: 0px 2px 2px 0px;
+  }
+
+  &:hover::before,
+  &:hover::after {
+    width: calc(100% + 2.2rem);
+    height: calc(100% + 2.2rem);
+    border-color: #3644af;
+  }
+}

@@ -6,12 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Page title</title>
   <link rel="stylesheet" href="./sass/index.scss" />
-  <script type="module" src="./index.js"></script>
 </head>
 
 <body>
+  <include src="./partials/search-form.html"></include>
+  <div class="container">
+    <include src="./partials/gallery-images.html"></include>
+    <include src="./partials/btn_footer.html"></include>
+  </div>
+  <include src="./partials/loader.html"></include>
 
-  <include src="./partials/searchImages.html"></include>
+  <script type="module" src="./index.js"></script>
 </body>
 
 </html>
