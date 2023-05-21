@@ -19,7 +19,7 @@ let totalPages = 0;
 function onSearch(e) {
   e.preventDefault();
   query = e.currentTarget.elements.searchQuery.value.trim();
-  page = 1;
+  currentPage = 1;
   refs.galleryImages.innerHTML = '';
   if (query === '') {
     Notify.failure('The search string cannot be empty. Please specify your search query.', {
@@ -35,7 +35,7 @@ function onSearch(e) {
 async function fetchSearchImages(query) {
   refs.loader.classList.remove('hidden');
   try {
-    const data = await API.fetchImages(query, page, perPage);
+    const data = await API.fetchImages(query, currentPage, perPage);
 
     if (data.totalHits === 0) {
       Notify.failure('Sorry, there are no images matching your search query. Please try again.', {
