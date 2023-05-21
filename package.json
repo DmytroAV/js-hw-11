@@ -5,7 +5,7 @@
   "source": "src/index.html",
   "homepage": "https://github.com/DmytroAV/js-hw-10/",
   "scripts": {
-    "start": "parcel src/*.html --port 8000",
+    "start": "parcel src/*.html",
     "build": "parcel build src/*.html --public-url /js-hw-11/"
   },
   "repository": {
