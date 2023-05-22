@@ -2,7 +2,7 @@ import axios from 'axios';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const BASE_URL = 'https://pixabay.com/api';
-const KEY_SEC = process.env.SECRET_KEY;
+const SECRET_KEY_API = process.env.SECRET_KEY_API;
 
 axios.defaults.baseURL = BASE_URL;
 
@@ -20,7 +20,7 @@ axios.interceptors.response.use(
 async function fetchImages(query, page, perPage) {
   try {
     const response = await axios.get(
-      `?key=${KEY_SEC}&q=${query}&image_type=photo&orientation=horizontal&safesearch=true&page=${page}&per_page=${perPage}`,
+      `?key=${SECRET_KEY_API}&q=${query}&image_type=photo&orientation=horizontal&safesearch=true&page=${page}&per_page=${perPage}`,
     );
     return response.data;
   } catch (error) {
