@@ -18,6 +18,7 @@ jobs:
         run: |
           npm ci
           npm run build
+          echo $SECRET_KEY_API
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.0
