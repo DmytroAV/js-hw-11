@@ -3,6 +3,9 @@ name: Build and deploy to GitHub Pages
 on:
   push:
     branches: [main]
+    
+env:
+    SECRET_KEY: secrets.SECRET_KEY
 
 jobs:
   build-and-deploy:
