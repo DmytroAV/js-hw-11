@@ -5,11 +5,12 @@ on:
     branches: [main]
     
 env:
-    SECRET_KEY_API: ${{ secrets.SECRET_KEY_API }}
+    SECRET_KEY_API: '${{ secrets.SECRET_KEY_API }}'
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    environment: production
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v2.3.1
@@ -18,7 +19,6 @@ jobs:
         run: |
           npm ci
           npm run build
-          echo $SECRET_KEY_API
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.0
