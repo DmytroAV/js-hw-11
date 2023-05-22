@@ -3,9 +3,6 @@ name: Build and deploy to GitHub Pages
 on:
   push:
     branches: [main]
-    
-env:
-    SECRET_KEY_API: ${{ secrets.SECRET_KEY_API }}
 
 jobs:
   build-and-deploy:
@@ -18,6 +15,8 @@ jobs:
         run: |
           npm ci
           npm run build
+        env:
+          SECRET_KEY_API: ${{ secrets.SECRET_KEY_API }}
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.0
