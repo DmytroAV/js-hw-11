@@ -5,7 +5,7 @@ on:
     branches: [main]
     
 env:
-    SECRET_KEY_API: echo ${{ secrets.SECRET_KEY_API }}
+    SECRET_KEY_API: ${{ secrets.SECRET_KEY_API }}
 
 jobs:
   build-and-deploy:
